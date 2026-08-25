@@ -40,7 +40,7 @@ load_dotenv()
 
 # Resolve paths relative to the routerbench/ directory
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-ROUTERBENCH_DIR = os.path.dirname(SCRIPT_DIR)  # routerbench/
+ROUTERBENCH_DIR = os.path.dirname(SCRIPT_DIR)
 
 DIFFICULTY_DB_PATH = os.path.join(ROUTERBENCH_DIR, "faiss_dbs", "difficulty_db")
 OOD_DIFFICULTY_DB_PATH = os.path.join(ROUTERBENCH_DIR, "faiss_dbs", "difficulty_db_ood")
@@ -67,23 +67,6 @@ config_list = [
         "api_key": os.getenv('NVIDIA_API_KEY'),
         "base_url": "https://integrate.api.nvidia.com/v1",
     },
-    # {
-    #     "name": "qwen3.5",
-    #     "model": "qwen/qwen3.5-flash-02-23",
-    #     "api_key": os.getenv("OPENROUTER_API_KEY"),
-    #     "base_url": "https://openrouter.ai/api/v1",
-    # },
-    # {
-    #     "name": "gpt-4o-mini",
-    #     "model": "gpt-4o-mini",
-    #     "api_key": os.getenv("OPENAI_API_KEY1"),
-    # },
-    # {
-    #     "name": "gemini-2.5-flash-lite",
-    #     "model": "gemini-2.5-flash-lite-preview-06-17",
-    #     "api_key": os.getenv('GEMINI_API_KEY'),
-    #     "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-    # },
 ]
 
 llm_config = {
@@ -92,7 +75,6 @@ llm_config = {
     "temperature": 0.5,
 }
 
-# Global data loaded at import time (same as agenticrouter_normalizedcost.py)
 try:
     with open(os.path.join(ROUTERBENCH_DIR, 'data', 'llm_analyses_results.pkl'), 'rb') as f:
         response_data = pickle.load(f)
@@ -109,9 +91,6 @@ except (FileNotFoundError, KeyError):
     difficulty_data = {}
 
 
-# ─────────────────────────────────────────────────────────────
-# DifficultyAnalystAgent  (identical to agenticrouter_normalizedcost.py)
-# ─────────────────────────────────────────────────────────────
 class DifficultyAnalystAgent:
     def __init__(self, client: OpenAI, model_name: str, temperature: float):
         self.client = client
@@ -150,9 +129,6 @@ class DifficultyAnalystAgent:
                 }
 
 
-# ─────────────────────────────────────────────────────────────
-# Retriever  (identical to agenticrouter_normalizedcost.py)
-# ─────────────────────────────────────────────────────────────
 class Retriever:
     def __init__(self, difficulty_db: FAISS):
         self.difficulty_db = difficulty_db
@@ -164,14 +140,10 @@ class Retriever:
         """
         if self.difficulty_db:
             results_with_scores = self.difficulty_db.similarity_search_with_score(query, k=k)
-            # Convert L2 distance to similarity weight
             return [(doc, 1.0 / (1.0 + score)) for doc, score in results_with_scores]
         return []
 
 
-# ─────────────────────────────────────────────────────────────
-# RewardRoutingDecisionMaker  (replaces LLM-based RoutingDecisionMakerAgent)
-# ─────────────────────────────────────────────────────────────
 class RewardRoutingDecisionMaker:
     """
     Compute a reward score per model from the retrieved historical samples
@@ -187,86 +159,6 @@ class RewardRoutingDecisionMaker:
     def __init__(self, gamma: float = 0.8):
         self.gamma = gamma
 
-    # ----- 原始寫法 (註解掉) -----
-    # def decide(
-    #     self,
-    #     relevant_responses: Dict[str, List[Any]],
-    #     llm_list: Dict[str, float],
-    #     train_df: pd.DataFrame,
-    # ) -> Tuple[str, Dict[str, float]]:
-    #     """
-    #     Args:
-    #         relevant_responses: {model_name: [Document, ...]} from FAISS retrieval
-    #         llm_list: {model_name: normalized_cost_weight} — the static cost info
-    #         train_df: training dataframe with sample_id, model columns (scores),
-    #                   and model|total_cost columns (costs)
-    #     
-    #     Returns:
-    #         (best_model_name, model_rewards_dict)
-    #     """
-    #     llm_names = list(llm_list.keys())
-    #     train_df_indexed = train_df.set_index('sample_id')
-    # 
-    #     model_rewards = {}
-    #     model_details = {}
-    # 
-    #     # Pre-compute max cost across all models in the training set for normalization
-    #     cost_columns = [f"{m}|total_cost" for m in llm_names if f"{m}|total_cost" in train_df.columns]
-    #     if cost_columns:
-    #         max_cost = train_df[cost_columns].values.max()
-    #     else:
-    #         max_cost = 1.0  # fallback
-    # 
-    #     for model_name in llm_names:
-    #         docs = relevant_responses.get(model_name, [])
-    #         if not docs:
-    #             model_rewards[model_name] = float('-inf')
-    #             continue
-    # 
-    #         scores = []
-    #         costs = []
-    #         cost_col = f"{model_name}|total_cost"
-    # 
-    #         for doc in docs:
-    #             sample_id = doc.metadata.get('sample_id')
-    #             if sample_id is not None and sample_id in train_df_indexed.index:
-    #                 try:
-    #                     score = float(train_df_indexed.loc[sample_id, model_name])
-    #                     scores.append(score)
-    #                 except (KeyError, ValueError):
-    #                     pass
-    #                 
-    #                 # Get actual cost for this sample
-    #                 if cost_col in train_df_indexed.columns:
-    #                     try:
-    #                         cost = float(train_df_indexed.loc[sample_id, cost_col])
-    #                         costs.append(cost)
-    #                     except (KeyError, ValueError):
-    #                         pass
-    # 
-    #         if not scores:
-    #             model_rewards[model_name] = float('-inf')
-    #             continue
-    # 
-    #         mean_score = np.mean(scores)
-    #         mean_cost = np.mean(costs) if costs else 0.0
-    #         normalized_cost = mean_cost / max_cost if max_cost > 0 else 0.0
-    # 
-    #         reward = self.gamma * mean_score - (1 - self.gamma) * normalized_cost
-    #         model_rewards[model_name] = reward
-    #         model_details[model_name] = {
-    #             'mean_score': mean_score,
-    #             'mean_cost': mean_cost,
-    #             'normalized_cost': normalized_cost,
-    #             'reward': reward,
-    #             'n_retrieved': len(scores),
-    #         }
-    # 
-    #     # Select the model with the highest reward
-    #     best_model = max(model_rewards, key=model_rewards.get)
-    #     return best_model, model_rewards
-
-    # ----- 新寫法 (修正方向 2) -----
     def decide(
         self,
         relevant_training_docs_with_scores: List[Any],
@@ -289,21 +181,18 @@ class RewardRoutingDecisionMaker:
         model_rewards = {}
         model_details = {}
 
-        # Pre-compute max cost across all models in the training set for normalization
         cost_columns = [f"{m}|total_cost" for m in llm_names if f"{m}|total_cost" in train_df.columns]
         if cost_columns:
             max_cost = train_df[cost_columns].values.max()
         else:
-            max_cost = 1.0  # fallback
+            max_cost = 1.0
             
-        # 1. 取出所有檢索到的 training query sample_ids 及其 similarity weights
-        training_entries = []  # list of (sample_id, weight)
+        training_entries = []
         for doc, sim_weight in relevant_training_docs_with_scores:
             sample_id = doc.metadata.get('sample_id')
             if sample_id is not None and sample_id in train_df_indexed.index:
                 training_entries.append((sample_id, sim_weight))
 
-        # 2. 針對所有 model_names，用 similarity-weighted 平均計算表現與成本
         for model_name in llm_names:
             scores = []
             costs = []
@@ -311,14 +200,12 @@ class RewardRoutingDecisionMaker:
             cost_col = f"{model_name}|total_cost"
 
             for sample_id, w in training_entries:
-                # 取得分數
                 try:
                     score = float(train_df_indexed.loc[sample_id, model_name])
                     scores.append(score)
                 except (KeyError, ValueError):
                     continue
                 
-                # 取得成本
                 if cost_col in train_df_indexed.columns:
                     try:
                         cost = float(train_df_indexed.loc[sample_id, cost_col])
@@ -335,11 +222,6 @@ class RewardRoutingDecisionMaker:
                 continue
 
             weights_arr = np.array(weights)
-            # ----- 原始寫法: simple mean (註解掉) -----
-            # mean_score = np.mean(scores)
-            # mean_cost = np.mean(costs) if costs else 0.0
-            
-            # ----- 新寫法: similarity-weighted mean -----
             mean_score = np.average(scores, weights=weights_arr)
             mean_cost = np.average(costs, weights=weights_arr) if costs else 0.0
             
@@ -355,7 +237,6 @@ class RewardRoutingDecisionMaker:
                 'n_retrieved': len(scores),
             }
 
-        # Select the model with the highest reward
         if not model_rewards or all(v == float('-inf') for v in model_rewards.values()):
             return llm_names[0], model_rewards
             
@@ -363,9 +244,6 @@ class RewardRoutingDecisionMaker:
         return best_model, model_rewards
 
 
-# ─────────────────────────────────────────────────────────────
-# RewardRouter  (replaces AgenticRouter)
-# ─────────────────────────────────────────────────────────────
 class RewardRouter:
     def __init__(
         self,
@@ -386,11 +264,9 @@ class RewardRouter:
         self.k = k
 
     def route(self, query: str, cached_difficulty: str = None) -> Tuple[str, Dict[str, Any], Dict[str, float]]:
-        # Step 1: Retrieve relevant difficulty analyses to provide context to the analyst.
         relevant_analyses_with_scores = self.retriever.retrieve_difficulty_analyses(query)
         relevant_analyses = [doc for doc, _ in relevant_analyses_with_scores]
 
-        # Step 2: Analyze query difficulty (use cache if available, otherwise call LLM).
         if cached_difficulty is not None:
             difficulty_analysis = {
                 "query": query,
@@ -400,26 +276,10 @@ class RewardRouter:
         else:
             difficulty_analysis = self.difficulty_analyst.analyze(query, relevant_analyses)
         
-        # ----- 原始寫法 (註解掉) -----
-        # Step 3: Retrieve relevant model responses using the difficulty analysis text.
-        # relevant_responses = self.retriever.retrieve_model_responses(
-        #     difficulty_analysis['difficulty'], k=self.k
-        # )
-        # 
-        # Step 4: Compute reward for each model and select the best one.
-        # decision, model_rewards = self.decision_maker.decide(
-        #     relevant_responses,
-        #     self.llm_list,
-        #     self.train_df,
-        # )
-        
-        # ----- 新寫法 (修正方向 2) -----
-        # Step 3: 用 difficulty analysis 去檢索 difficulty DB (統一的 query DB)
         relevant_training_docs_with_scores = self.retriever.retrieve_difficulty_analyses(
             difficulty_analysis['difficulty'], k=self.k
         )
         
-        # Step 4: Compute reward for each model and select the best one based on the unified queries.
         decision, model_rewards = self.decision_maker.decide(
             relevant_training_docs_with_scores,
             self.llm_list,
@@ -464,12 +324,10 @@ if __name__ == '__main__':
     )
     args = parser.parse_args()
 
-    # Set DB paths based on OOD flag
     if args.ood:
         DIFFICULTY_DB_PATH = OOD_DIFFICULTY_DB_PATH
         print("OOD testing mode enabled. Using OOD database paths.")
 
-    # Initialize OpenAI from selected config
     selected_config = next((c for c in config_list if c["name"] == args.model_config), None)
     if not selected_config:
         print(f"Error: Model configuration '{args.model_config}' not found.")
@@ -491,7 +349,6 @@ if __name__ == '__main__':
     )
     print("Embedding model initialized on cuda:0.")
 
-    # --- Load data and split into train/test for benchmark ---
     print("Loading and splitting data for benchmark...")
     try:
         full_df = pd.read_csv(os.path.join(ROUTERBENCH_DIR, 'data', 'router_bench_with_keywords.csv'))
@@ -507,10 +364,8 @@ if __name__ == '__main__':
             print(f"In-distribution 'eval_name's (top 10) for DB creation: {list(id_eval_names)}")
             print(f"Out-of-distribution 'eval_name's (11-15) for testing: {list(ood_eval_names)}")
 
-            # Filter original training data to create in-distribution training set
             train_df = original_train_df_for_responses[original_train_df_for_responses['eval_name'].isin(id_eval_names)].copy()
             
-            # Create OOD test set
             test_df = full_df[full_df['eval_name'].isin(ood_eval_names)].copy()
             print(f"Loaded {len(train_df)} samples for OOD training DB and {len(test_df)} for OOD testing.")
             total_test_samples = len(test_df)
@@ -533,9 +388,7 @@ if __name__ == '__main__':
             ).reset_index(drop=True)
             print(f"Final test set sampled to {len(test_df)} samples based on eval_name proportion.")
 
-        # The training data for difficulty analysis is from train_df
         difficulty_data = train_df.set_index('sample_id')['difficulty_analysis_summary'].to_dict()
-        # resp_sample_ids is now used to filter responses, so it should be a set for efficient lookup
         resp_sample_ids_set = set(train_df['sample_id'].tolist())
 
     except FileNotFoundError as e:
@@ -576,11 +429,10 @@ if __name__ == '__main__':
     print("\n" + "="*50 + "\n")
     print("Starting benchmark on the test set...")
 
-    # --- Load or initialize difficulty analysis cache ---
     os.makedirs(DIFFICULTY_CACHE_DIR, exist_ok=True)
     cache_filename = f"difficulty_cache_{args.model_config}_{'ood' if args.ood else 'indomain'}.json"
     cache_filepath = os.path.join(DIFFICULTY_CACHE_DIR, cache_filename)
-    difficulty_cache = {}  # key: query text -> value: difficulty analysis text
+    difficulty_cache = {}
     if os.path.exists(cache_filepath):
         with open(cache_filepath, 'r', encoding='utf-8') as f:
             difficulty_cache = json.load(f)
@@ -596,22 +448,18 @@ if __name__ == '__main__':
     cache_misses = 0
     cache_lock = threading.Lock()
 
-    # Pre-build a list of (row_idx, query, row_data) for parallel processing
     test_items = [(i, row['prompt'], row) for i, (_, row) in enumerate(test_df.iterrows())]
-    # Pre-allocate results arrays (indexed by position)
-    results_by_idx = [None] * num_test_samples  # (difficulty_text, decision)
+    results_by_idx = [None] * num_test_samples
 
     def process_query(item):
         """Process a single query: cache lookup -> route -> return results."""
         idx, query, row = item
 
-        # Check cache for pre-computed difficulty analysis
         cached_difficulty = difficulty_cache.get(query, None)
         is_cache_hit = cached_difficulty is not None
 
         decision, difficulty_analysis, model_rewards = router.route(query, cached_difficulty=cached_difficulty)
 
-        # Thread-safe cache update for new analyses
         if not is_cache_hit:
             with cache_lock:
                 difficulty_cache[query] = difficulty_analysis['difficulty']
@@ -636,12 +484,10 @@ if __name__ == '__main__':
 
                     model_selection_counts[decision] = model_selection_counts.get(decision, 0) + 1
 
-                    # Check correctness
                     if decision in test_df.columns:
                         correctness = row[decision]
                         total_correct += correctness
 
-                    # Calculate cost
                     cost_column = f"{decision}|total_cost"
                     if cost_column in test_df.columns:
                         cost = row[cost_column]
@@ -649,14 +495,12 @@ if __name__ == '__main__':
 
                     pbar.update(1)
 
-        # Unpack results in order
         difficulty_analyses_results = [r[0] for r in results_by_idx]
         routing_decisions_results = [r[1] for r in results_by_idx]
 
         test_df['agent_difficulty_analysis'] = difficulty_analyses_results
         test_df['agent_routing_decision'] = routing_decisions_results
         
-        # --- Save difficulty analysis cache ---
         with open(cache_filepath, 'w', encoding='utf-8') as f:
             json.dump(difficulty_cache, f, ensure_ascii=False)
         print(f"\nDifficulty analysis cache saved to {cache_filepath} ({len(difficulty_cache)} entries)")
@@ -676,7 +520,6 @@ if __name__ == '__main__':
         print(f"Accuracy: {total_correct / num_test_samples:.4f}")
         print(f"Total cumulative cost (Reward Router): {total_cost}")
 
-        # Model selection distribution
         print(f"\nModel Selection Distribution:")
         for model_name, count in sorted(model_selection_counts.items(), key=lambda x: -x[1]):
             if count > 0:
@@ -684,7 +527,6 @@ if __name__ == '__main__':
                 bar = "█" * int(pct / 2)
                 print(f"  {model_name:45s} {count:5d} ({pct:5.1f}%) {bar}")
 
-        # Calculate and print cost if all queries were routed to gpt-4-1106-preview
         gpt4_cost_column = "gpt-4-1106-preview|total_cost"
         total_gpt4_cost = 0.0
         if gpt4_cost_column in test_df.columns:
@@ -693,7 +535,6 @@ if __name__ == '__main__':
         else:
             print(f"\nWarning: Cost column '{gpt4_cost_column}' not found in test data. Cannot calculate baseline cost.")
 
-        # Calculate and print accuracy if all queries were routed to gpt-4-1106-preview
         gpt4_accuracy_column = "gpt-4-1106-preview"
         total_gpt4_correct = 0
         if gpt4_accuracy_column in test_df.columns:
@@ -702,8 +543,7 @@ if __name__ == '__main__':
         else:
             print(f"Warning: Accuracy column '{gpt4_accuracy_column}' not found in test data. Cannot calculate baseline accuracy.")
 
-        # Calculate and print for random routing baseline
-        np.random.seed(42) # for reproducibility
+        np.random.seed(42)
         random_total_correct = 0.0
         random_total_cost = 0.0
         llm_names = list(LLM_LIST.keys())

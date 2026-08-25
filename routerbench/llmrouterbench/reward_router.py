@@ -7,10 +7,6 @@ from retrieved similar queries and select the LLM with the highest reward.
 
 Architecture (follows agenticrouter_normalizedcost.py):
     1. For each test query, use an LLM to generate difficulty analysis
-    # 2. Use difficulty analysis text to retrieve top-k similar response analyses
-    #    from each model's FAISS Response DB
-    # 3. For each model, compute reward from the retrieved historical samples:
-    #    Reward = γ * Mean(Score) - (1-γ) * Normalized_Mean(Cost)
     2. Use difficulty analysis text to retrieve top-k similar difficulty analyses
        from the FAISS Difficulty DB (getting a unified set of similar queries).
     3. For each model, compute reward on this EXACT SAME set of queries:
@@ -53,7 +49,6 @@ TARGET_MODELS = [
     'qwen3-235b-a22b-2507'
 ]
 
-# LLM configurations for the difficulty analysis agent
 CONFIG_LIST = [
     {
         "name": "qwen3.5",
@@ -67,17 +62,6 @@ CONFIG_LIST = [
         "api_key": os.getenv('NVIDIA_API_KEY'),
         "base_url": "https://integrate.api.nvidia.com/v1",
     }
-    # {
-    #     "name": "gpt-4o-mini",
-    #     "model": "gpt-4o-mini",
-    #     "api_key": os.getenv("OPENAI_API_KEY1"),
-    # },
-    # {
-    #     "name": "gemini-2.5-flash-lite",
-    #     "model": "gemini-2.5-flash-lite-preview-06-17",
-    #     "api_key": os.getenv('GEMINI_API_KEY'),
-    #     "base_url": "https://generativelanguage.googleapis.com/v1beta/openai/",
-    # },
 ]
 
 
@@ -152,7 +136,6 @@ class Retriever:
         """
         if self.difficulty_db:
             results_with_scores = self.difficulty_db.similarity_search_with_score(query, k=k)
-            # Convert L2 distance to similarity weight
             return [(doc, 1.0 / (1.0 + score)) for doc, score in results_with_scores]
         return []
 
@@ -204,14 +187,12 @@ def compute_reward_routing(
     """
     model_rewards = {}
     
-    # 1. 取出所有檢索到的 training queries 及其 similarity weights
-    training_entries = []  # list of (query, weight)
+    training_entries = []
     for doc, sim_weight in relevant_training_docs_with_scores:
         query = doc.metadata.get('query', '')
         if query and query in routing_lookup:
             training_entries.append((query, sim_weight))
             
-    # 2. 針對所有 target_models，用 similarity-weighted 平均計算表現與成本
     for model_name in target_models:
         scores = []
         costs = []
@@ -230,11 +211,6 @@ def compute_reward_routing(
             continue
         
         weights_arr = np.array(weights)
-        # ----- 原始寫法: simple mean (註解掉) -----
-        # mean_score = np.mean(scores)
-        # mean_cost = np.mean(costs)
-        
-        # ----- 新寫法: similarity-weighted mean -----
         mean_score = np.average(scores, weights=weights_arr)
         mean_cost = np.average(costs, weights=weights_arr)
         
@@ -242,9 +218,7 @@ def compute_reward_routing(
         reward = gamma * mean_score - (1 - gamma) * normalized_cost
         model_rewards[model_name] = reward
     
-    # Select the model with the highest reward
     if not model_rewards or all(v == float('-inf') for v in model_rewards.values()):
-        # Fallback if no valid reward computed
         return target_models[0]
         
     best_model = max(model_rewards, key=model_rewards.get)
@@ -289,7 +263,6 @@ def main():
     print(f"  Output: {args.output}")
     print()
 
-    # ---------- Initialize LLM client for difficulty analysis ----------
     selected_config = next((c for c in CONFIG_LIST if c['name'] == args.model_config), None)
     if not selected_config:
         print(f"Error: Config '{args.model_config}' not found.")
@@ -302,7 +275,6 @@ def main():
     agent_model = selected_config['model']
     print(f"Difficulty analysis agent: {agent_model}")
 
-    # ---------- Initialize embedding model ----------
     print("Loading embedding model (Qwen/Qwen3-Embedding-0.6B)...")
     embedding_model = HuggingFaceEmbeddings(
         model_name="Qwen/Qwen3-Embedding-0.6B",
@@ -310,7 +282,6 @@ def main():
     )
     print(f"Embedding model loaded on {args.embedding_device}.")
 
-    # ---------- Load FAISS databases ----------
     print("Loading FAISS databases...")
     
     difficulty_db = None
@@ -327,7 +298,6 @@ def main():
         print("\nError: Could not load the difficulty database.")
         sys.exit(1)
 
-    # ---------- Load routing ground truth ----------
     print(f"\nLoading routing data from {args.routing_data}...")
     routing_lookup = load_routing_data(args.routing_data)
     print(f"  Loaded {len(routing_lookup)} queries with routing data")
@@ -335,7 +305,6 @@ def main():
     max_total_cost = compute_max_total_cost(routing_lookup)
     print(f"  max_total_cost for normalization: {max_total_cost:.6f}")
 
-    # ---------- Load test queries ----------
     print(f"\nLoading test queries from {args.input}...")
     test_queries = []
     with open(args.input, 'r', encoding='utf-8') as f:
@@ -345,16 +314,13 @@ def main():
                 test_queries.append(rec['query'])
     print(f"  Total test queries: {len(test_queries)}")
 
-    # ---------- Initialize components ----------
     retriever = Retriever(difficulty_db)
     analyst = DifficultyAnalystAgent(client, agent_model)
 
-    # ---------- Run routing ----------
     print(f"\n{'='*60}")
     print("Starting Reward-based Routing...")
     print(f"{'='*60}\n")
 
-    # Load cache
     cache_dir = os.path.join(DATA_DIR, "difficulty_analysis_cache")
     os.makedirs(cache_dir, exist_ok=True)
     cache_filepath = os.path.join(cache_dir, f"difficulty_cache_{args.model_config}.json")
@@ -374,7 +340,6 @@ def main():
     cache_lock = threading.Lock()
     
     def process_query(query):
-        # Cache check
         with cache_lock:
             cached_diff = difficulty_cache.get(query)
         is_cache_hit = cached_diff is not None
@@ -389,15 +354,6 @@ def main():
             with cache_lock:
                 difficulty_cache[query] = difficulty_text
                 
-        # ----- 原始寫法 (註解掉) -----
-        # relevant_responses = retriever.retrieve_model_responses(difficulty_text, k=args.k)
-        # best_model = compute_reward_routing(
-        #     relevant_responses, routing_lookup, max_total_cost,
-        #     args.gamma, TARGET_MODELS
-        # )
-        
-        # ----- 新寫法 (修正方向 2) -----
-        # 用 difficulty analysis 去檢索 difficulty DB (統一的 query DB)
         relevant_training_docs = retriever.retrieve_difficulty_analyses(difficulty_text, k=args.k)
         best_model = compute_reward_routing(
             relevant_training_docs, routing_lookup, max_total_cost,
@@ -427,13 +383,11 @@ def main():
                 else:
                     cache_misses += 1
 
-    # Save cache
     with open(cache_filepath, 'w', encoding='utf-8') as f:
         json.dump(difficulty_cache, f, ensure_ascii=False)
     print(f"\n  Difficulty analysis cache saved to {cache_filepath} ({len(difficulty_cache)} entries)")
     print(f"  Cache stats: {cache_hits} hits, {cache_misses} misses")
 
-    # ---------- Summary ----------
     print(f"\n{'='*60}")
     print("  Routing Complete!")
     print(f"{'='*60}")
