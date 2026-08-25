@@ -12,3 +12,5 @@ wheels/
 data
 .cache
 .env
+
+paper-latex/
