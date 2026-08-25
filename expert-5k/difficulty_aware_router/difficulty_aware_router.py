@@ -156,7 +156,6 @@ class DifficultyAwareRouter(UnifiedRouterBase):
 
     def route_single_ranked(self, query_input: dict[str, Any]) -> RouterResult:
         query = _extract_query(query_input)
-        # step1: Create query analysis
         analysis_result = self.analysis_agent.invoke(
             question=query,
             request_options=self.chat_request_options,
@@ -165,7 +164,6 @@ class DifficultyAwareRouter(UnifiedRouterBase):
         if not query_summary and self._requires_query_summary():
             raise ValueError("DifficultyAnalysisAgent returned an empty summary.")
 
-        # Step2: Create query embedding
         retrieval_text = self._build_retrieval_text(
             query=query,
             analysis_result=analysis_result,

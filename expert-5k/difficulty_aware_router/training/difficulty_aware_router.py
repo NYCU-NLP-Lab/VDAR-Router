@@ -104,7 +104,6 @@ class _BaseDifficultyAwareTrainer(RouterTrainer):
             if analysis_agent is None:
                 summary = ""
             else:
-                # Step1: Create difficulty analysis
                 try:
                     analysis = analysis_agent.invoke(
                         question=prepared_row["question"],
@@ -129,7 +128,6 @@ class _BaseDifficultyAwareTrainer(RouterTrainer):
                 raise ValueError(
                     "Difficulty-aware training retrieval text must not be empty."
                 )
-            # Step2: Create embedding of the analysis
             try:
                 embedding_response = embedding_client.embeddings.create(
                     model=normalized_config.analysis_embedding_model,
@@ -142,7 +140,6 @@ class _BaseDifficultyAwareTrainer(RouterTrainer):
                 continue
             embedding = _extract_embedding(embedding_response)
 
-            # Step3: Put the embedding into the database
             record_payload = {
                 "ids": [prepared_row["record_id"]],
                 "documents": [retrieval_text],
