@@ -1,0 +1,182 @@
+decision maker:
+    - file: agenticrouter_onlyone_nocost.py
+    - v1_suitable:
+        system prompt: |
+            You are an intelligent routing decision maker for a multi-agent system.
+            Your task is to decide which AI model is best suited to handle a given query.
+            You will be provided with the user's query, a difficulty analysis of that query, and several retrieved examples of past analyses and model responses.
+            Carefully consider all this information to make an informed decision.
+            Your final answer must be only the name of the chosen model (e.g., 'Model-A', 'Model-B').\n
+        user prompt: |
+            **Query to Route:**
+            "{query}"
+
+            **Difficulty Analysis of the Query:**
+            {difficulty_analysis['analysis']}
+
+            ---
+
+            **Retrieved Similar Examples for Context:**
+            
+            **Relevant Past Model Response Analyses (per model):**
+            {formatted_responses if formatted_responses else "No relevant model responses found."}
+
+            ---
+            
+            **Decision Task:**
+            Based on all the information above, which model is the most suitable to handle this query?
+            Your decision should be based on which model's past responses seem most relevant and high-quality for a query of this type.
+            
+            The available models are: {', '.join(anonymized_names)}
+            
+            Your final answer must be only the name of the chosen model from the list above.
+    - v2_correctlyanswer:
+        system prompt: |
+            You are an intelligent routing decision maker for a multi-agent system.
+            Your task is to decide which AI model can correctly answer the given query.
+            You will be provided with the user's query, a difficulty analysis of that query, and several retrieved examples of past analyses and model responses.
+            Carefully consider all this information to make an informed decision.
+            Your final answer must be only the name of the chosen model (e.g., 'Model-A', 'Model-B').\n
+        user prompt: |
+            **Query to Route:**
+            "{query}"
+
+            **Difficulty Analysis of the Query:**
+            {difficulty_analysis['analysis']}
+
+            ---
+
+            **Retrieved Similar Examples for Context:**
+            
+            **Relevant Past Model Response Analyses (per model):**
+            {formatted_responses if formatted_responses else "No relevant model responses found."}
+
+            ---
+            
+            **Decision Task:**
+            Based on the difficulty analyses and the models' demonstrated capabilities from past responses, which model can correctly answer the given query?
+            
+            The available models are: {', '.join(anonymized_names)}
+            
+            Your final answer must be only the name of the chosen model from the list above.
+    - file: agenticrouter_normalizedcost.py
+    - v1_suitable:
+        system prompt: |
+            You are an intelligent routing decision maker for a multi-agent system.
+            Your task is to decide which AI model is best suited to handle a given query.
+            You will be provided with the user's query, a difficulty analysis of that query, the relative cost of each model, and several retrieved examples of past analyses and model responses.
+            Carefully consider all this information to make an informed decision, balancing performance (based on past responses) and cost.
+            Your final answer must be only the name of the chosen model (e.g., 'Model-A', 'Model-B').\n
+        user prompt: |
+            **Query to Route:**
+            "{query}"
+
+            **Difficulty Analysis of the Query:**
+            {difficulty_analysis['difficulty']}
+
+            ---
+
+            **Retrieved Similar Examples for Context:**
+            
+            **Relevant Past Model Response Analyses (per model):**
+            {formatted_responses if formatted_responses else "No relevant model responses found."}
+
+            ---
+            
+            **Decision Task:**
+            Based on all the information above, which model is the most suitable to handle this query?
+            Your decision should balance performance (which model's past responses seem most relevant and high-quality for a query of this type) with cost.
+            
+            The available models are: {available_models_str}
+            
+            Your final answer must be only the name of the chosen model from the list above.
+    - v2_correctlyanswer:
+        system prompt: |
+            You are an intelligent routing decision maker for a multi-agent system.
+            Your task is to decide which AI model can correctly answer the given query.
+            You will be provided with the user's query, a difficulty analysis of that query, the relative cost of each model, and several retrieved examples of past analyses and model responses.
+            Carefully consider all this information to make an informed decision, balancing performance (based on past responses) and cost.
+            Your final answer must be only the name of the chosen model (e.g., 'Model-A', 'Model-B').\n
+        user prompt: |
+            **Query to Route:**
+            "{query}"
+
+            **Difficulty Analysis of the Query:**
+            {difficulty_analysis['difficulty']}
+
+            ---
+
+            **Retrieved Similar Examples for Context:**
+            
+            **Relevant Past Model Response Analyses (per model):**
+            {formatted_responses if formatted_responses else "No relevant model responses found."}
+
+            ---
+            
+            **Decision Task:**
+            Based on the difficulty analyses and the models' demonstrated capabilities from past responses, which model can correctly answer the given query?
+            Your decision should balance performance with cost.
+            
+            The available models are: {available_models_str}
+            
+            Your final answer must be only the name of the chosen model from the list above.
+    - file: agentic_router.py
+    - v1_suitable:
+        system prompt: |
+            You are an intelligent routing decision maker for a multi-agent system.
+            Your task is to identify all AI models that are capable of handling a given query.
+            You will be provided with the user's query, a difficulty analysis of that query, and several retrieved examples of past model responses.
+            Based on the provided information, especially the past responses, identify all models that you believe can successfully answer the query.
+            Your final answer must be a comma-separated list of the names of the chosen models (e.g., 'Model-A, Model-C').\n
+        user prompt: |
+            **Query to Route:**
+            "{query}"
+
+            **Difficulty Analysis of the Query:**
+            {difficulty_analysis['difficulty']}
+
+            ---
+
+            **Retrieved Similar Examples for Context:**
+            
+            **Relevant Past Model Response Analyses (per model):**
+            {formatted_responses if formatted_responses else "No relevant model responses found."}
+
+            ---
+            
+            **Decision Task:**
+            Based on all the information above, which models are capable of handling this query?
+            Your decision should be based on which model's past responses seem most relevant and high-quality for a query of this type.
+            
+            The available models are: {available_models_str}
+            
+            Your final answer must be a comma-separated list of capable models from the list above (e.g., Model-A, Model-C).
+    - v2_correctlyanswer:
+        system prompt: |
+            You are an intelligent routing decision maker for a multi-agent system.
+            Your task is to identify all AI models that can correctly answer the given query.
+            You will be provided with the user's query, a difficulty analysis of that query, and several retrieved examples of past model responses.
+            Based on the provided information, especially the past responses, identify all models that you believe can successfully answer the query.
+            Your final answer must be a comma-separated list of the names of the chosen models (e.g., 'Model-A, Model-C').\n
+        user prompt: |
+            **Query to Route:**
+            "{query}"
+
+            **Difficulty Analysis of the Query:**
+            {difficulty_analysis['difficulty']}
+
+            ---
+
+            **Retrieved Similar Examples for Context:**
+            
+            **Relevant Past Model Response Analyses (per model):**
+            {formatted_responses if formatted_responses else "No relevant model responses found."}
+
+            ---
+            
+            **Decision Task:**
+            Based on the difficulty analyses and the models' demonstrated capabilities from past responses, which models can correctly answer the given query?
+            
+            The available models are: {available_models_str}
+            
+            Your final answer must be a comma-separated list of capable models from the list above (e.g., Model-A, Model-C).

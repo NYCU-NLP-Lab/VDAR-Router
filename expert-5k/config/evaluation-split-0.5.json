@@ -1,0 +1,21 @@
+[
+    {
+        "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b-split-0.5/manifest.json",
+        "target_suffix": "qwen3.5-4b",
+        "runtime_config": {
+            "cache_mode": {
+                "chat_completions": "replay_only",
+                "embeddings": "replay_only"
+            },
+            "analysis_model": "qwen3.5-4b",
+            "top_k": 10,
+            "gamma": 0.95
+        },
+        "request_options": {
+            "chat_completions": {
+                "seed": 42
+            },
+            "embeddings": {}
+        }
+    }
+]

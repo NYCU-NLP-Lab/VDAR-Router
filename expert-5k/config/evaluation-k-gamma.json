@@ -1,0 +1,2522 @@
+[
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.0
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p05",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.05
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p1",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.1
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p15",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.15
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p2",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.2
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p25",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.25
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p3",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.3
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p35",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.35
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p4",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.4
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p45",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.45
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p5",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.5
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p55",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.55
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p6",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.6
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p65",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.65
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p7",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.7
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p75",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.75
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p8",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.8
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p85",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.85
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p9",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.9
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma0p95",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 0.95
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k5-gamma1",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 5,
+      "gamma": 1.0
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.0
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p05",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.05
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p1",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.1
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p15",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.15
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p2",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.2
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p25",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.25
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p3",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.3
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p35",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.35
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p4",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.4
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p45",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.45
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p5",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.5
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p55",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.55
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p6",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.6
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p65",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.65
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p7",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.7
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p75",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.75
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p8",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.8
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p85",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.85
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p9",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.9
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma0p95",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 0.95
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k10-gamma1",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 10,
+      "gamma": 1.0
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.0
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p05",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.05
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p1",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.1
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p15",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.15
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p2",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.2
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p25",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.25
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p3",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.3
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p35",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.35
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p4",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.4
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p45",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.45
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p5",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.5
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p55",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.55
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p6",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.6
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p65",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.65
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p7",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.7
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p75",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.75
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p8",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.8
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p85",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.85
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p9",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.9
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma0p95",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 0.95
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k15-gamma1",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 15,
+      "gamma": 1.0
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.0
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p05",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.05
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p1",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.1
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p15",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.15
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p2",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.2
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p25",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.25
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p3",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.3
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p35",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.35
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p4",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.4
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p45",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.45
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p5",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.5
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p55",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.55
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p6",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.6
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p65",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.65
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p7",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.7
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p75",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.75
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p8",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.8
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p85",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.85
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p9",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.9
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma0p95",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 0.95
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k20-gamma1",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 20,
+      "gamma": 1.0
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.0
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p05",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.05
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p1",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.1
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p15",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.15
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p2",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.2
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p25",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.25
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p3",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.3
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p35",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.35
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p4",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.4
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p45",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.45
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p5",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.5
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p55",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.55
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p6",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.6
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p65",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.65
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p7",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.7
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p75",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.75
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p8",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.8
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p85",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.85
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p9",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.9
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma0p95",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 0.95
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k25-gamma1",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 25,
+      "gamma": 1.0
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.0
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p05",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.05
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p1",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.1
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p15",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.15
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p2",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.2
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p25",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.25
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p3",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.3
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p35",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.35
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p4",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.4
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p45",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.45
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p5",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.5
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p55",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.55
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p6",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.6
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p65",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.65
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p7",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.7
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p75",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.75
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p8",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.8
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p85",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.85
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p9",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.9
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma0p95",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 0.95
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  },
+  {
+    "router_manifest_path": "data/difficulty-aware-router/qwen3.5-4b/manifest.json",
+    "target_suffix": "qwen3.5-4b-k30-gamma1",
+    "runtime_config": {
+      "cache_mode": {
+        "chat_completions": "replay_only",
+        "embeddings": "replay_only"
+      },
+      "analysis_model": "qwen3.5-4b",
+      "top_k": 30,
+      "gamma": 1.0
+    },
+    "request_options": {
+      "chat_completions": {
+        "seed": 42
+      },
+      "embeddings": {}
+    },
+    "shared_cache_namespace": "difficulty-aware-router--qwen3.5-4b--qwen3.5-4b"
+  }
+]
